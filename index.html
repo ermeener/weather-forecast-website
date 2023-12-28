@@ -13,24 +13,30 @@
 <div class="weather-app">
   <header>
  
-<form>
-  <input type="search" placeholder="Enter a city" required>
-  <input type="submit" value="search">
+<form class="search-form">
+  <input type="search" placeholder="Enter a city" required class="search-form-input">
+  <input type="submit" value="search" class="search-form-button">
 
 </form>
   </header>
   <main>
+    <div class="weather-details">
     <div>
-    <h1>Nairobi</h1>
-    <p>Monday 12:30, clear – no clouds
+    <h1 class="weather-app-heading">Nairobi</h1>
+    <p class="weather-app-data">Monday 12:30, clear – no clouds
       <br>
-      Humidity: 57% , Wind:2.13km/h
+      Humidity: <strong>57%</strong> , Wind: <strong>2.13km/h</strong>
       <br>
-    </div>
-    <div>
-    🌥️ 20 °C
     </p>
+    </div>
+    <div class="weather-container">
+      <div class="weather-app-emoji">🌥️</div>
+      <div class="weather-app-temperature">20</div>
+      <div class="weather-app-units"> °C</div>
+     
+    
   </div>
+</div>
   </main>
   
   
