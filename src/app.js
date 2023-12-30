@@ -1,4 +1,11 @@
-
+function refreshWeatherData(response){
+  // console.log(response.data.temperature.current);
+  let temperatureElement=document.querySelector("#temperature");
+  let temperature=response.data.temperature.current;
+  temperatureElement.innerHTML=Math.round(temperature);
+  let cityElement=document.querySelector("#city");
+  cityElement.innerHTML=response.data.city;
+}
 
 function searchCity(city){
 
@@ -6,6 +13,7 @@ function searchCity(city){
   // let apiUrl =`https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
   let apiUrl=`https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`
   console.log(apiUrl);
+  axios.get(apiUrl).then(refreshWeatherData)
 }
 
 
@@ -16,10 +24,10 @@ function submitButton(event){
 
   let searchInput=document.querySelector("#search-form-input");
   
-  let cityElement=document.querySelector("#city");
-  cityElement.innerHTML=searchInput.value;
+  
   searchCity(searchInput.value)
 }
 
 let searchelement=document.querySelector("#search-name");
 searchelement.addEventListener("submit" , submitButton);
+searchCity("Nairobi");
