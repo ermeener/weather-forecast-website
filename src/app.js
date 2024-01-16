@@ -21,6 +21,7 @@ timeElement.innerHTML= formatDate(date);
 console.log(response.data);
 let iconElement=document.querySelector("#icon");
   iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-app-icon" />`;
+  getForecast(response.data.city)
 }
 
 function formatDate(date) {
@@ -96,7 +97,7 @@ function displayForecast(response) {
 
   });
 
-  // let forecastElement = document.querySelector("#forecast");
+  let forecastElement = document.querySelector("#forecast");
   forecastElement.innerHTML = forecastHtml;
 }
 
@@ -105,17 +106,3 @@ let searchelement=document.querySelector("#search-name");
 searchelement.addEventListener("submit" , submitButton);
 searchCity("Nairobi");
 
-// 
-// let forecast=document.querySelector("#forecast")
-// forecast.innerHTML=`
-// <div class="weather-forecast-day">
-// <div class="weather-forecast-date">Wed</div>
-// <div class="weather-forecast-icon">🌤️</div>
-// <div class="weather-forecast-temperatures">
-//   <div class="weather-forecast-temperature">
-//     <strong>15º</strong>
-//   </div>
-//   <div class="weather-forecast-temperature">9º</div>
-// </div>
-// </div>
-// `;
